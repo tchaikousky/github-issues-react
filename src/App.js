@@ -1,12 +1,17 @@
 import React from 'react';
 import './App.css';
 import IssueList from './components/IssueList';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import IssueDetail from './components/IssueDetail';
 
 function App() {
   
   return (
     <div className="App">
-      <IssueList />
+      <Router>
+        <Route path="/" exact component={IssueList}/>
+        <Route path="/issue/:issueNumber?" component={IssueDetail}/>
+      </Router>
     </div>
   );
 }

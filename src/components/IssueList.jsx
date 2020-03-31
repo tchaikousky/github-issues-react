@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Issue from './Issue.jsx';
+import IssueDetail from './IssueDetail.jsx';
 
 class IssueList extends Component {
   
@@ -23,14 +24,18 @@ class IssueList extends Component {
     }
 
     render() {
+        
         return(
             <div>
                 {
                 this.state.issues.map(issue => (
                     <div className="IssueAsList">
-                        <Issue key={issue.number} issue={issue} />
+                        <h3>{issue.title}</h3>
+                        <a href={issue.number}>{issue.number}</a>
                     </div>
+                    
                 ))}
+                
             </div>
         );
     };
